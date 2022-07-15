@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<head>
+<title>Unit Of Activity</title>
+<link rel="stylesheet" href="css.css">
+ <script LANGUAGE="JavaScript">
+ function cek(){
+ if(form.perolehan.value == "" || form.residu.value == "" || form.pemakaian.value == "" || form.kapasitas.value == ""){
+ alert("Data kosong");
+ exit;}
+ }
+
+ function hitung() {
+ cek();
+ a=eval(form.perolehan.value);
+ b=eval(form.residu.value);
+ c=eval(form.pemakaian.value);
+ d=eval(form.kapasitas.value);
+ e=(a-b)*(c/d)
+ form.total.value = e;
+ }
+ function reset() {
+ form.perolehan.value="";
+ form.residu.value="";
+ form.pemakaian.value="";
+ form.kapasitas.value="";
+ form.total.value = "";
+ }
+ </script>
+ 
+</head>
+ <center><table bgcolor="#5F9EA0">
+  <form id="form" name="form" onsubmit="return false">
+ <tr>
+ 	<td>Hasil Perolehan</td>
+ <td><input type=text name="perolehan" size="30"></td>
+ <tr>
+ 	<td>Residu</td>
+ <td><input name="residu" type="text" size="30" /></td></tr>
+ <tr>
+ 	<td> Aktivitas Pemakaian</td>
+ <td><input name="pemakaian" type="text" size="30" /></td>
+ <tr>
+ 	<td>Kapasitas Maksimal</td>
+ <td><input name="kapasitas" type="text" size="30" /></td></tr>
+ <tr>
+ 	<td>Hasil</td>
+ 	<td><input type="text" value="" name="total" size="30" readonly></td>
+ <tr><div class="frame"> <td align="right"><button class="custom-btn btn-3" name=submit onclick="hitung() || cetak1() || cetak2()">Hitung</button></td>
+ <td><button class="custom-btn btn-3" name=submit onclick="reset()">Reset</button></td></tr>
+ </form></center></table><hr>
+ <p id="cetak1"></p>
+ <p id="cetak2"></p>
+</body>
+<div>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<head>
+<title>STRAIGHT LINE</title>
+<link rel="stylesheet" href="css.css">
+ <script LANGUAGE="JavaScript">
+ function cek(){
+ if(form.perolehan.value == "" || form.residu.value == ""  || form.umur.value == ""){
+ alert("Data kosong");
+ exit;}
+ }
+
+ function hitung() {
+ cek();
+ a=eval(form.perolehan.value);
+ b=eval(form.residu.value);
+ c=eval(form.umur.value);
+ d=(a-b)/c
+ form.total.value = d;
+ }
+ 
+ function reset() {
+ form.perolehan.value="";
+ form.residu.value="";
+ form.umur.value="";
+ form.total.value = "";
+ }
+
+ function cek2(){
+ if(form2.perolehan2.value == "" || form2.umur2.value == ""){
+ alert("Data kosong");
+ exit;}
+ }
+
+ function hitung2() {
+ cek2();
+ a=eval(form2.perolehan2.value);
+ b=eval(form2.umur2.value);
+ c=a/b
+ form2.total2.value = c;
+ }
+ function reset2() {
+ form2.perolehan2.value="";
+ form2.umur2.value="";
+ form2.total2.value = "";
+ }
+ </script>
+</head>
+  <div class="isi">
+<h1>Menggunakan Residu</h1>
+<center><table bgcolor="#5F9EA0">
+  <tr>
+    <td>
+ <form id="form" name="form" onsubmit="return false">
+ Hasil Perolehan</td>
+ <td><input type=text name="perolehan" size=30></td></div></tr>
+ <tr>
+ <td>Residu</td>
+ <td><input name="residu" type="text" size="30" /></td></tr>
+ <tr>
+ <td>Umur Ekonomis</td>
+ <td><input name="umur" type="text" size="30" /></td></tr>
+ <tr><td>Hasil</td> <td><input type="text" value="" name="total" size="30" readonly></td></tr>
+ <tr>
+ <td align="right"><div class="frame">
+  <button class="custom-btn btn-3" name=submit onclick="hitung() || cetak1() || cetak2()">Hitung</button></td>
+ <td><button class="custom-btn btn-3" name=submit onclick="reset()">Reset</button></div></td></tr>
+ </form></table><br>
+ <p id="cetak1"></p>
+ <p id="cetak2"></p><hr>
+
+<h1>Tidak Menggunakan Residu</h1>
+ <table bgcolor="#5F9EA0">
+  <tr>
+ <td><form id="form2" name="form2" onsubmit="return false"></td><tr>
+ <td>Hasil Perolehan</td>
+ <td><input type=text name="perolehan2" size=30></td></tr>
+ <tr><td>
+ Umur Ekonomis</td>
+ <td><input name="umur2" type="text" size="30" /></td></tr>
+ <tr><td>Hasil</td> <td><input type="text" value="" name="total2" size="30" readonly></td></tr>
+ <tr><td align="right"><div class="frame">
+ <button class="custom-btn btn-3" name=submit onclick="hitung2() || cetak3() || cetak4()">Hitung</button></td>
+ <td><button class="custom-btn btn-3" name=submit onclick="reset2()">Reset</button></div></td></tr>
+ </form></table></center><br>
+
+ <p id="cetak3"></p>
+ <p id="cetak4"></p><hr>
+
+</body>
+    </div>
+</html>
